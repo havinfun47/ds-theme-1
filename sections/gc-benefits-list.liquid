@@ -1,0 +1,191 @@
+{%- liquid
+  if section.settings.image != blank
+    assign img_src = section.settings.image | image_url: width: 1000
+  else
+    assign img_src = 'gc-img-3.png' | asset_url
+  endif
+-%}
+
+<div
+  class="gc-section gc-blist"
+  style="
+    --gc-bg: {{ section.settings.background_color }};
+    --gc-text: {{ section.settings.text_color }};
+    --gc-accent: {{ section.settings.accent_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="gc-container gc-blist__grid">
+    <div class="gc-blist__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="gc-heading gc-heading--left">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      <ul class="gc-blist__items">
+        {%- for block in section.blocks -%}
+          <li class="gc-blist__item" {{ block.shopify_attributes }}>
+            <span class="gc-blist__check" aria-hidden="true">✓</span>
+            <span>{{ block.settings.text }}</span>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    <div class="gc-blist__media">
+      <img src="{{ img_src }}" alt="{{ section.settings.heading | escape }}" loading="lazy" width="500" height="500">
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .gc-blist__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .gc-blist__media {
+    order: 2;
+  }
+  .gc-blist__media img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+  }
+  .gc-blist__items {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+  }
+  .gc-blist__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+  .gc-blist__check {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--gc-accent);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  @media screen and (max-width: 749px) {
+    .gc-blist__grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .gc-blist__media {
+      order: 0;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GC Benefits Checklist",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What GutCleanse Helps With"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#22311f"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Check color",
+      "default": "#3f7d4f"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Benefit item"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GC Benefits Checklist",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Targets parasites, larvae, and eggs at the same time" } },
+        { "type": "item", "settings": { "text": "Helps reduce bloating, gas, and digestive discomfort" } },
+        { "type": "item", "settings": { "text": "Supports healthy, regular bowel movements" } },
+        { "type": "item", "settings": { "text": "Fights fatigue and restores daily energy" } },
+        { "type": "item", "settings": { "text": "Clears brain fog and supports mental clarity" } },
+        { "type": "item", "settings": { "text": "Curbs sugar and carb cravings" } },
+        { "type": "item", "settings": { "text": "Promotes clearer, healthier-looking skin" } },
+        { "type": "item", "settings": { "text": "Supports better, more restful sleep" } },
+        { "type": "item", "settings": { "text": "Replenishes nutrients with fulvic acid trace minerals" } },
+        { "type": "item", "settings": { "text": "Helps repair and strengthen the gut lining" } },
+        { "type": "item", "settings": { "text": "Improves nutrient absorption after the cleanse" } },
+        { "type": "item", "settings": { "text": "Sublingual delivery for faster absorption than capsules" } },
+        { "type": "item", "settings": { "text": "Clean, non-GMO herbs — no fillers or synthetics" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

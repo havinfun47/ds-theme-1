@@ -1,0 +1,155 @@
+<div
+  class="gc-section gc-guarantee"
+  style="
+    --gc-bg: {{ section.settings.background_color }};
+    --gc-text: {{ section.settings.text_color }};
+    --gc-accent: {{ section.settings.accent_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="gc-container gc-guarantee__inner">
+    {%- if section.settings.badge != blank -%}
+      <div class="gc-guarantee__badge">{{ section.settings.badge }}</div>
+    {%- endif -%}
+    <h2 class="gc-heading">{{ section.settings.heading }}</h2>
+    <div class="gc-guarantee__text">{{ section.settings.body }}</div>
+
+    {%- if section.settings.urgency != blank -%}
+      <p class="gc-guarantee__urgency">{{ section.settings.urgency }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <a href="{{ section.settings.button_link | default: '#' }}" class="gc-guarantee__btn">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .gc-guarantee__inner {
+    text-align: center;
+    max-width: 720px;
+  }
+  .gc-guarantee__badge {
+    font-size: 3rem;
+    margin-bottom: 12px;
+  }
+  .gc-guarantee__text {
+    margin-top: 16px;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    opacity: 0.9;
+  }
+  .gc-guarantee__urgency {
+    margin-top: 24px;
+    font-weight: 600;
+    color: #b4452e;
+  }
+  .gc-guarantee__btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 16px 40px;
+    border-radius: 999px;
+    background: var(--gc-accent);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: filter 0.15s ease;
+  }
+  .gc-guarantee__btn:hover {
+    filter: brightness(0.92);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GC Guarantee",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge icon (emoji)",
+      "default": "🛡️"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "30-Day Money-Back Guarantee"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Try GutCleanse completely risk-free. If you're not satisfied for any reason, we'll refund you in full — no questions asked, even on opened bottles.</p>"
+    },
+    {
+      "type": "text",
+      "id": "urgency",
+      "label": "Urgency line",
+      "default": "93% sold — this batch sold out 12 times last year. Only available here, so don't risk fakes on Amazon or eBay."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Add to Cart"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#22311f"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#3f7d4f"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 88
+    }
+  ],
+  "presets": [
+    { "name": "GC Guarantee" }
+  ]
+}
+{% endschema %}

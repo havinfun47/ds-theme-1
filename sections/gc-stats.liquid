@@ -1,0 +1,175 @@
+<div
+  class="gc-section gc-stats"
+  style="
+    --gc-bg: {{ section.settings.background_color }};
+    --gc-text: {{ section.settings.text_color }};
+    --gc-accent: {{ section.settings.accent_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="gc-container">
+    <div class="gc-stats__rating">
+      <div class="gc-stats__stars" aria-hidden="true">★★★★★</div>
+      <div class="gc-stats__score">{{ section.settings.rating_score }} {{ section.settings.rating_label }}</div>
+      <div class="gc-stats__count">Based on {{ section.settings.rating_count }} reviews</div>
+    </div>
+
+    <div class="gc-stats__grid">
+      {%- for block in section.blocks -%}
+        <div class="gc-stat" {{ block.shopify_attributes }}>
+          <div class="gc-stat__value">{{ block.settings.value }}</div>
+          <div class="gc-stat__label">{{ block.settings.label }}</div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .gc-stats__rating {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  .gc-stats__stars {
+    color: #f5a623;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+  }
+  .gc-stats__score {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+  .gc-stats__count {
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+  .gc-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .gc-stat__value {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--gc-accent);
+    line-height: 1;
+  }
+  .gc-stat__label {
+    margin-top: 10px;
+    opacity: 0.85;
+    line-height: 1.4;
+  }
+  @media screen and (max-width: 749px) {
+    .gc-stats__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 16px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GC Rating & Stats",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "rating_score",
+      "label": "Rating score",
+      "default": "4.9"
+    },
+    {
+      "type": "text",
+      "id": "rating_label",
+      "label": "Rating label",
+      "default": "Excellent"
+    },
+    {
+      "type": "text",
+      "id": "rating_count",
+      "label": "Review count",
+      "default": "7,979"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#22311f"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#9ccfa3"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistic",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "87%"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "reported improvement"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GC Rating & Stats",
+      "blocks": [
+        { "type": "stat", "settings": { "value": "87%", "label": "reported less bloating" } },
+        { "type": "stat", "settings": { "value": "82%", "label": "felt more daily energy" } },
+        { "type": "stat", "settings": { "value": "91%", "label": "would recommend to a friend" } },
+        { "type": "stat", "settings": { "value": "88%", "label": "noticed improved digestion" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

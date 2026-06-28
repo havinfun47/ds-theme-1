@@ -325,6 +325,108 @@
         "padding-block-end": 0
       }
     },
+    "gc_trust": {
+      "type": "gc-trust-bar",
+      "blocks": {
+        "t1": { "type": "badge", "settings": { "icon": "🌱", "label": "Non-GMO" } },
+        "t2": { "type": "badge", "settings": { "icon": "🌿", "label": "Vegan" } },
+        "t3": { "type": "badge", "settings": { "icon": "🌾", "label": "Gluten-Free" } },
+        "t4": { "type": "badge", "settings": { "icon": "🇺🇸", "label": "Made in the USA" } },
+        "t5": { "type": "badge", "settings": { "icon": "🔒", "label": "Secure Checkout" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5"],
+      "settings": {}
+    },
+    "gc_benefits": {
+      "type": "gc-benefits",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "icon": "🪱", "title": "Targets Every Stage", "text": "Works against adult parasites, larvae, and eggs in a single protocol." } },
+        "b2": { "type": "benefit", "settings": { "icon": "🫧", "title": "Reduces Bloating & Gas", "text": "Helps calm digestion and ease uncomfortable bloating and gas." } },
+        "b3": { "type": "benefit", "settings": { "icon": "⚡", "title": "Restores Energy", "text": "Fights the fatigue and brain fog linked to gut imbalance." } },
+        "b4": { "type": "benefit", "settings": { "icon": "🛡️", "title": "Rebuilds Gut Lining", "text": "Step 2 fulvic minerals support repair and nutrient absorption." } },
+        "b5": { "type": "benefit", "settings": { "icon": "🌱", "title": "Gentle & Natural", "text": "Herbal blend without the harsh side effects of synthetic dewormers." } },
+        "b6": { "type": "benefit", "settings": { "icon": "💧", "title": "Faster Absorption", "text": "Sublingual liquid delivery absorbs faster than capsules." } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "settings": {}
+    },
+    "gc_why": {
+      "type": "gc-why",
+      "blocks": {},
+      "block_order": [],
+      "settings": {}
+    },
+    "gc_benefits_list": {
+      "type": "gc-benefits-list",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "text": "Targets parasites, larvae, and eggs at the same time" } },
+        "i2": { "type": "item", "settings": { "text": "Helps reduce bloating, gas, and digestive discomfort" } },
+        "i3": { "type": "item", "settings": { "text": "Supports healthy, regular bowel movements" } },
+        "i4": { "type": "item", "settings": { "text": "Fights fatigue and restores daily energy" } },
+        "i5": { "type": "item", "settings": { "text": "Clears brain fog and supports mental clarity" } },
+        "i6": { "type": "item", "settings": { "text": "Curbs sugar and carb cravings" } },
+        "i7": { "type": "item", "settings": { "text": "Promotes clearer, healthier-looking skin" } },
+        "i8": { "type": "item", "settings": { "text": "Supports better, more restful sleep" } },
+        "i9": { "type": "item", "settings": { "text": "Replenishes nutrients with fulvic acid trace minerals" } },
+        "i10": { "type": "item", "settings": { "text": "Helps repair and strengthen the gut lining" } },
+        "i11": { "type": "item", "settings": { "text": "Improves nutrient absorption after the cleanse" } },
+        "i12": { "type": "item", "settings": { "text": "Sublingual delivery for faster absorption than capsules" } },
+        "i13": { "type": "item", "settings": { "text": "Clean, non-GMO herbs — no fillers or synthetics" } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10", "i11", "i12", "i13"],
+      "settings": {}
+    },
+    "gc_how": {
+      "type": "gc-how-to-use",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Cleanse (Days 1–14)", "text": "Place the recommended dropper amount of the Step 1 herbal blend under your tongue twice daily. Hold for 30 seconds before swallowing to target parasites at every stage of their lifecycle." } },
+        "s2": { "type": "step", "settings": { "title": "Restore (Daily)", "text": "Add the Step 2 fulvic acid trace minerals to a glass of water and drink once daily to flush toxins, replenish nutrients, and support gut-lining repair." } },
+        "s3": { "type": "step", "settings": { "title": "Repeat the Cycle", "text": "Complete the full 14-day cycle 2–3 times for a thorough reset, then use as needed for ongoing maintenance." } }
+      },
+      "block_order": ["s1", "s2", "s3"],
+      "settings": {}
+    },
+    "gc_stats": {
+      "type": "gc-stats",
+      "blocks": {
+        "st1": { "type": "stat", "settings": { "value": "87%", "label": "reported less bloating" } },
+        "st2": { "type": "stat", "settings": { "value": "82%", "label": "felt more daily energy" } },
+        "st3": { "type": "stat", "settings": { "value": "91%", "label": "would recommend to a friend" } },
+        "st4": { "type": "stat", "settings": { "value": "88%", "label": "noticed improved digestion" } }
+      },
+      "block_order": ["st1", "st2", "st3", "st4"],
+      "settings": {}
+    },
+    "gc_testimonials": {
+      "type": "gc-testimonials",
+      "blocks": {
+        "r1": { "type": "review", "settings": { "body": "After two weeks the bloating I'd lived with for years finally went down. I have so much more energy and I'm not crashing every afternoon anymore.", "name": "Sarah M.", "meta": "Age 41" } },
+        "r2": { "type": "review", "settings": { "body": "I was skeptical, but by the second cycle the brain fog lifted and my digestion is the best it's been in a decade. The Step 2 minerals make a real difference.", "name": "James T.", "meta": "Age 53" } },
+        "r3": { "type": "review", "settings": { "body": "Gentle and easy to use — no harsh cramping like other cleanses I've tried. My skin even cleared up around week three.", "name": "Megan R.", "meta": "Age 34" } },
+        "r4": { "type": "review", "settings": { "body": "My sugar cravings basically disappeared. I'm sleeping through the night and waking up actually rested. Wish I'd found this sooner.", "name": "David K.", "meta": "Age 47" } },
+        "r5": { "type": "review", "settings": { "body": "Did the full 3 cycles. The difference in how I feel day to day is night and day. Less bloat, more energy, clearer head.", "name": "Linda P.", "meta": "Age 58" } },
+        "r6": { "type": "review", "settings": { "body": "The sublingual drops are so much easier than swallowing handfuls of capsules. Noticed changes within the first week.", "name": "Anthony G.", "meta": "Age 39" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6"],
+      "settings": {}
+    },
+    "gc_usp": {
+      "type": "gc-usp",
+      "blocks": {
+        "u1": { "type": "usp", "settings": { "icon": "🔄", "title": "Full-Lifecycle Coverage", "text": "Most cleanses only kill adult parasites. GutCleanse targets adults, larvae, and eggs so the cycle doesn't restart." } },
+        "u2": { "type": "usp", "settings": { "icon": "🌿", "title": "Multi-Mechanism Herbal Blend", "text": "Wormwood, clove, neem, pumpkin seed, fennel, sunflower, and vitamin E work through several pathways at once." } },
+        "u3": { "type": "usp", "settings": { "icon": "🛠️", "title": "Two-Step Recovery System", "text": "Competitors skip the rebuild. Step 2 replenishes nutrients and supports gut-lining repair after the cleanse." } },
+        "u4": { "type": "usp", "settings": { "icon": "🧪", "title": "Clean, Honest Formulation", "text": "No fillers, no synthetics. Non-GMO, vegan, and gluten-free — made to high quality standards." } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4"],
+      "settings": {}
+    },
+    "gc_guarantee": {
+      "type": "gc-guarantee",
+      "blocks": {},
+      "block_order": [],
+      "settings": {}
+    },
     "product_recommendations_qggXJq": {
       "type": "product-recommendations",
       "blocks": {
@@ -470,6 +572,15 @@
   },
   "order": [
     "main",
+    "gc_trust",
+    "gc_benefits",
+    "gc_why",
+    "gc_benefits_list",
+    "gc_how",
+    "gc_stats",
+    "gc_testimonials",
+    "gc_usp",
+    "gc_guarantee",
     "product_recommendations_qggXJq"
   ]
 }

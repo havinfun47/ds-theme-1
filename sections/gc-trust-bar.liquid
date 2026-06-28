@@ -1,0 +1,104 @@
+<div
+  class="gc-section gc-trust"
+  style="
+    --gc-bg: {{ section.settings.background_color }};
+    --gc-text: {{ section.settings.text_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="gc-container gc-trust__row">
+    {%- for block in section.blocks -%}
+      <div class="gc-trust__item" {{ block.shopify_attributes }}>
+        <span class="gc-trust__icon">{{ block.settings.icon }}</span>
+        <span class="gc-trust__label">{{ block.settings.label }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .gc-trust__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 40px;
+  }
+  .gc-trust__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .gc-trust__icon {
+    font-size: 1.3rem;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GC Trust Bar",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#eef2ea"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#22311f"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Icon (emoji)", "default": "🌿" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Badge" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GC Trust Bar",
+      "blocks": [
+        { "type": "badge", "settings": { "icon": "🌱", "label": "Non-GMO" } },
+        { "type": "badge", "settings": { "icon": "🌿", "label": "Vegan" } },
+        { "type": "badge", "settings": { "icon": "🌾", "label": "Gluten-Free" } },
+        { "type": "badge", "settings": { "icon": "🇺🇸", "label": "Made in the USA" } },
+        { "type": "badge", "settings": { "icon": "🔒", "label": "Secure Checkout" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

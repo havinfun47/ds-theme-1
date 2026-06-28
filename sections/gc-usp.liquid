@@ -1,0 +1,186 @@
+<div
+  class="gc-section gc-usp"
+  style="
+    --gc-bg: {{ section.settings.background_color }};
+    --gc-text: {{ section.settings.text_color }};
+    --gc-accent: {{ section.settings.accent_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="gc-container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="gc-heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    <div class="gc-usp__grid">
+      {%- for block in section.blocks -%}
+        <div class="gc-usp__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != blank -%}
+            <div class="gc-usp__icon">{{ block.settings.icon }}</div>
+          {%- endif -%}
+          <h3 class="gc-usp__title">{{ block.settings.title }}</h3>
+          <p class="gc-usp__text">{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .gc-usp__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .gc-usp__item {
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--gc-accent) 40%, transparent);
+  }
+  .gc-usp__icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  .gc-usp__title {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+  }
+  .gc-usp__text {
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.88;
+  }
+  @media screen and (max-width: 749px) {
+    .gc-usp__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GC Unique Selling Points",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Makes GutCleanse Different"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f4f1ea"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#22311f"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#3f7d4f"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "Selling point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "✅"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Selling point"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Describe the selling point."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GC Unique Selling Points",
+      "blocks": [
+        {
+          "type": "usp",
+          "settings": {
+            "icon": "🔄",
+            "title": "Full-Lifecycle Coverage",
+            "text": "Most cleanses only kill adult parasites. GutCleanse targets adults, larvae, and eggs so the cycle doesn't restart."
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "icon": "🌿",
+            "title": "Multi-Mechanism Herbal Blend",
+            "text": "Wormwood, clove, neem, pumpkin seed, fennel, sunflower, and vitamin E work through several pathways at once."
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "icon": "🛠️",
+            "title": "Two-Step Recovery System",
+            "text": "Competitors skip the rebuild. Step 2 replenishes nutrients and supports gut-lining repair after the cleanse."
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "icon": "🧪",
+            "title": "Clean, Honest Formulation",
+            "text": "No fillers, no synthetics. Non-GMO, vegan, and gluten-free — made to high quality standards."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

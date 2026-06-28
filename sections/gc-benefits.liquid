@@ -1,0 +1,240 @@
+{%- liquid
+  assign bg = section.settings.background_color
+  assign text = section.settings.text_color
+  assign accent = section.settings.accent_color
+-%}
+
+<div
+  class="gc-section gc-benefits"
+  id="gc-benefits-{{ section.id }}"
+  style="
+    --gc-bg: {{ bg }};
+    --gc-text: {{ text }};
+    --gc-accent: {{ accent }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="gc-container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="gc-heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="gc-subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <div class="gc-benefits__grid">
+      {%- for block in section.blocks -%}
+        <div class="gc-benefit" {{ block.shopify_attributes }}>
+          <div class="gc-benefit__icon">{{ block.settings.icon }}</div>
+          <h3 class="gc-benefit__title">{{ block.settings.title }}</h3>
+          <p class="gc-benefit__text">{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .gc-section {
+    background: var(--gc-bg);
+    color: var(--gc-text);
+  }
+  .gc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 24px;
+  }
+  .gc-heading {
+    text-align: center;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.15;
+    margin: 0 0 12px;
+  }
+  .gc-subheading {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 40px;
+    opacity: 0.8;
+    font-size: 1.05rem;
+  }
+  .gc-benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .gc-benefit {
+    text-align: center;
+    padding: 28px 20px;
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--gc-accent) 18%, transparent);
+  }
+  .gc-benefit__icon {
+    font-size: 2.4rem;
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .gc-benefit__title {
+    font-size: 1.15rem;
+    margin: 0 0 8px;
+  }
+  .gc-benefit__text {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.5;
+  }
+  @media screen and (max-width: 749px) {
+    .gc-benefits__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GC Benefits Grid",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why GutCleanse Works"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "A complete 2-step protocol that targets parasites and rebuilds your gut."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#22311f"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#7aa37f"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji or symbol)",
+          "default": "🌿"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Benefit title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Describe the benefit here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GC Benefits Grid",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🪱",
+            "title": "Targets Every Stage",
+            "text": "Works against adult parasites, larvae, and eggs in a single protocol."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🫧",
+            "title": "Reduces Bloating & Gas",
+            "text": "Helps calm digestion and ease uncomfortable bloating and gas."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "⚡",
+            "title": "Restores Energy",
+            "text": "Fights the fatigue and brain fog linked to gut imbalance."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🛡️",
+            "title": "Rebuilds Gut Lining",
+            "text": "Step 2 fulvic minerals support repair and nutrient absorption."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌱",
+            "title": "Gentle & Natural",
+            "text": "Herbal blend without the harsh side effects of synthetic dewormers."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "💧",
+            "title": "Faster Absorption",
+            "text": "Sublingual liquid delivery absorbs faster than capsules."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

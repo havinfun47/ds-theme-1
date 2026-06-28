@@ -1,0 +1,163 @@
+{%- liquid
+  if section.settings.image != blank
+    assign img_src = section.settings.image | image_url: width: 1200
+  else
+    assign img_src = 'gc-img-2.png' | asset_url
+  endif
+-%}
+
+<div
+  class="gc-section gc-why{% if section.settings.image_position == 'right' %} gc-why--right{% endif %}"
+  style="
+    --gc-bg: {{ section.settings.background_color }};
+    --gc-text: {{ section.settings.text_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="gc-container gc-why__grid">
+    <div class="gc-why__media">
+      <img src="{{ img_src }}" alt="{{ section.settings.heading | escape }}" loading="lazy" width="600" height="600">
+    </div>
+    <div class="gc-why__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="gc-eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="gc-heading gc-heading--left">{{ section.settings.heading }}</h2>
+      <div class="gc-why__text">{{ section.settings.body }}</div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .gc-why .gc-why__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .gc-why--right .gc-why__media {
+    order: 2;
+  }
+  .gc-why__media img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+  }
+  .gc-eyebrow {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+  .gc-heading--left {
+    text-align: left;
+  }
+  .gc-why__text {
+    margin-top: 16px;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    opacity: 0.9;
+  }
+  .gc-why__text p {
+    margin: 0 0 1em;
+  }
+  @media screen and (max-width: 749px) {
+    .gc-why .gc-why__grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .gc-why--right .gc-why__media {
+      order: 0;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "GC Why You Need This",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Hidden Problem"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why You Need This"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Parasitic infections are far more common than most people realize — and they often go undiagnosed for years. Bloating, fatigue, brain fog, sugar cravings, skin issues, and restless sleep can all trace back to unwelcome guests in your gut.</p><p>Most cleanses only attack adult parasites and ignore the eggs and larvae that restart the cycle. GutCleanse is built differently: a complete 2-step system that targets parasites across every stage of their lifecycle, then rebuilds the gut lining and replenishes the nutrients a cleanse depletes.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f4f1ea"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#22311f"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
+  ],
+  "presets": [
+    { "name": "GC Why You Need This" }
+  ]
+}
+{% endschema %}
