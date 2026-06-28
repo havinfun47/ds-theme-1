@@ -8,278 +8,266 @@
  * ------------------------------------------------------------
  */{
   "sections": {
-    "hero_jVaWmY": {
-      "type": "hero",
+    "lv_hero": {
+      "type": "lv-banner",
+      "settings": {
+        "fallback_asset": "lv-hero.jpg",
+        "rating_text": "Rated 4.8/5 based on +18,366 reviews",
+        "heading": "The Most Relentless Herbal Parasite Cleanse",
+        "body": "<p>Wild-harvested wormwood drops crafted to support deep gut cleansing, digestive balance &amp; full-body vitality.</p>",
+        "button_label": "Flush The Invaders Out",
+        "button_link": "shopify://collections/all",
+        "content_position": "left",
+        "text_color": "#ffffff",
+        "overlay_color": "#0c1410",
+        "overlay_opacity": 45,
+        "button_bg": "#1c3326",
+        "button_text_color": "#ffffff",
+        "min_height": 700,
+        "min_height_mobile": 520,
+        "padding_block": 64
+      }
+    },
+    "lv_trust": {
+      "type": "lv-trust",
       "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
+        "c1": {
+          "type": "cert",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "text_color": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "icon": "⚗️",
+            "title": "USP-Grade Purity",
+            "text": "Pharmaceutical Quality"
+          }
         },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
+        "c2": {
+          "type": "cert",
           "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-custom",
-            "custom_button_background": "rgba(0,0,0,0)",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
+            "icon": "🔬",
+            "title": "3rd Party Lab Tested",
+            "text": "Verified Potency and Safety"
+          }
+        },
+        "c3": {
+          "type": "cert",
+          "settings": {
+            "icon": "🏭",
+            "title": "GMP Verified",
+            "text": "Good Manufacturing Practice"
+          }
         }
       },
       "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
+        "c1",
+        "c2",
+        "c3"
       ],
-      "name": "t:names.hero",
+      "settings": {}
+    },
+    "lv_problem": {
+      "type": "lv-banner",
       "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "background_color": "rgba(0,0,0,0)",
-        "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
+        "fallback_asset": "lv-problem.jpg",
+        "heading": "The Hidden Gut Drain Stealing Your Energy",
+        "body": "<p>Bloating, fatigue, and brain fog may not be from stress or aging — they can stem from a gut imbalance that leaves digestion sluggish and discomfort lingering.</p><p>LUMVELLE™ Wild-Harvested Wormwood Drops help target gut disruption at the source with a powerful blend of wormwood, black walnut hull, and oregano oil.</p>",
+        "content_position": "left",
+        "text_color": "#ffffff",
+        "overlay_color": "#0c1410",
+        "overlay_opacity": 50,
+        "min_height": 620,
+        "min_height_mobile": 500,
+        "padding_block": 64
       }
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
+    "lv_benefits": {
+      "type": "lv-benefits",
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "b1": {
+          "type": "benefit",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+            "icon": "🫀",
+            "title": "Support Digestive Balance",
+            "text": "Promote a calmer, lighter, more comfortable gut."
+          }
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "b2": {
+          "type": "benefit",
           "settings": {
-            "product_card_gap": 4,
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
+            "icon": "🛡️",
+            "title": "Reduce Bloating & Sluggishness",
+            "text": "Help ease that heavy, drained feeling after meals."
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🧠",
+            "title": "Enhance Mental Clarity",
+            "text": "Support clearer thinking by restoring gut harmony."
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "⚡",
+            "title": "Promote Daily Vitality",
+            "text": "Feel more energized, focused, and refreshed throughout the day."
+          }
         }
       },
-      "name": "Featured collection",
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "heading": ""
+      }
+    },
+    "lv_solution": {
+      "type": "lv-banner",
+      "settings": {
+        "fallback_asset": "lv-solution.jpg",
+        "heading": "The Solution? LUMVELLE™.",
+        "body": "<p>Optimizing cellular energy production is essential for maintaining daily vigor and cognitive performance. Supporting your body's natural mitochondrial health helps you feel renewed from within.</p>",
+        "button_label": "Try It Now",
+        "button_link": "shopify://collections/all",
+        "content_position": "left",
+        "text_color": "#ffffff",
+        "overlay_color": "#0c1410",
+        "overlay_opacity": 40,
+        "button_bg": "#1c3326",
+        "button_text_color": "#ffffff",
+        "min_height": 620,
+        "min_height_mobile": 500,
+        "padding_block": 64
+      }
+    },
+    "lv_timeline": {
+      "type": "lv-timeline",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "label": "Day 7",
+            "title": "The Gut Reset",
+            "bullets": "Bloating starts feeling less intense.\nDigestion feels lighter and smoother.\nMental fog begins to lift naturally.\nYou feel cleaner from the inside out."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "label": "Day 30",
+            "title": "The Daily Balance",
+            "bullets": "Energy feels steadier throughout the day.\nGut discomfort becomes less noticeable.\nYour body feels lighter after meals.\nDaily cleansing becomes part of your routine."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "label": "Day 90",
+            "title": "Full-Body Vitality",
+            "bullets": "Supports long-term digestive balance.\nHelps maintain a cleaner gut environment.\nUsers report feeling more energized and focused.\nPromotes a renewed sense of clarity and well-being."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "heading": "How Does LUMVELLE™ Work?"
+      }
+    },
+    "lv_guarantee": {
+      "type": "lv-banner",
+      "settings": {
+        "fallback_asset": "lv-guarantee.jpg",
+        "heading": "Restore Your Gut In 30 Days",
+        "body": "<p>Try LUMVELLE™ risk-free for 30 days. If you don't notice a meaningful difference in your digestion, energy, and daily comfort, we'll refund your purchase — no questions asked.</p>",
+        "subheading": "Reclaim your vitality, risk-free.",
+        "button_label": "Start Your Cleanse Now",
+        "button_link": "shopify://collections/all",
+        "content_position": "center",
+        "text_color": "#ffffff",
+        "overlay_color": "#0c1410",
+        "overlay_opacity": 50,
+        "button_bg": "#1c3326",
+        "button_text_color": "#ffffff",
+        "min_height": 620,
+        "min_height_mobile": 500,
+        "padding_block": 72
+      }
+    },
+    "lv_faq": {
+      "type": "lv-faq",
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "question": "How Long Until I Notice A Difference?",
+            "answer": "<p>Many customers report feeling lighter, less bloated, and more energized within the first few days. For deeper digestive balance and ongoing cleansing support, consistent daily use is recommended.</p>"
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "question": "How Do LUMVELLE™ Wormwood Drops Work?",
+            "answer": "<p>LUMVELLE™ delivers a concentrated blend of wild-harvested wormwood, black walnut hull, and oregano oil directly into your digestive system to help support natural cleansing, gut balance, and digestive comfort.</p>"
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "question": "Will These Drops Cause Harsh Side Effects?",
+            "answer": "<p>LUMVELLE™ is formulated to support gentle daily cleansing without harsh synthetic ingredients or heavy capsules. As with any herbal product, individual experiences may vary.</p>"
+          }
+        },
+        "q4": {
+          "type": "qa",
+          "settings": {
+            "question": "Do I Need To Take Capsules Or Pills Too?",
+            "answer": "<p>No, LUMVELLE™ is designed as a convenient liquid drop formula that absorbs quickly without the need for large capsules, fillers, or complicated cleanse routines.</p>"
+          }
+        },
+        "q5": {
+          "type": "qa",
+          "settings": {
+            "question": "What Makes LUMVELLE™ Different From Other Cleanses?",
+            "answer": "<p>Unlike harsh cleanse products that overload your system, LUMVELLE™ uses wild-harvested herbal ingredients in an easy-to-use liquid format that targets digestive balance without unnecessary fillers or stimulants.</p>"
+          }
+        },
+        "q6": {
+          "type": "qa",
+          "settings": {
+            "question": "Who Are LUMVELLE™ Wormwood Drops For?",
+            "answer": "<p>LUMVELLE™ is made for adults looking to support digestive balance, reduce bloating, and maintain daily energy and gut wellness with a natural herbal cleanse routine.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "open_first": false
       }
     }
   },
   "order": [
-    "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "lv_hero",
+    "lv_trust",
+    "lv_problem",
+    "lv_benefits",
+    "lv_solution",
+    "lv_timeline",
+    "lv_guarantee",
+    "lv_faq"
   ]
 }

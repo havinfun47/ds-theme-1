@@ -1,0 +1,198 @@
+{%- liquid
+  if section.settings.image != blank
+    assign img = section.settings.image | image_url: width: 2000
+  elsif section.settings.fallback_asset != blank
+    assign img = section.settings.fallback_asset | asset_url
+  endif
+-%}
+
+<div
+  class="lv-banner lv-align-{{ section.settings.content_position }}"
+  style="
+    --lv-text: {{ section.settings.text_color }};
+    --lv-overlay: {{ section.settings.overlay_color }};
+    --lv-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    --lv-btn-bg: {{ section.settings.button_bg }};
+    --lv-btn-text: {{ section.settings.button_text_color }};
+    --lv-min-height: {{ section.settings.min_height }}px;
+    --lv-min-height-mobile: {{ section.settings.min_height_mobile }}px;
+    {% if img %}--lv-image: url('{{ img }}');{% endif %}
+    --lv-pad-block: {{ section.settings.padding_block }}px;
+  "
+>
+  <div class="lv-banner__overlay"></div>
+  <div class="lv-banner__inner">
+    <div class="lv-banner__content">
+      {%- if section.settings.rating_text != blank -%}
+        <div class="lv-banner__rating">
+          <span class="lv-banner__stars" aria-hidden="true">★★★★★</span>
+          <span>{{ section.settings.rating_text }}</span>
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="lv-banner__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="lv-banner__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <div class="lv-banner__body">{{ section.settings.body }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.subheading != blank -%}
+        <p class="lv-banner__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link | default: '#' }}" class="lv-banner__btn">{{ section.settings.button_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .lv-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: var(--lv-min-height);
+    padding: var(--lv-pad-block) 24px;
+    background-image: var(--lv-image, none);
+    background-size: cover;
+    background-position: center;
+    color: var(--lv-text);
+    overflow: hidden;
+  }
+  .lv-banner__overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--lv-overlay);
+    opacity: var(--lv-overlay-opacity);
+    pointer-events: none;
+  }
+  .lv-banner__inner {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .lv-align-left .lv-banner__inner { justify-content: flex-start; }
+  .lv-align-center .lv-banner__inner { justify-content: center; }
+  .lv-align-right .lv-banner__inner { justify-content: flex-end; }
+  .lv-banner__content {
+    max-width: 620px;
+  }
+  .lv-align-center .lv-banner__content { text-align: center; }
+  .lv-align-right .lv-banner__content { text-align: right; }
+  .lv-banner__rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+  .lv-align-center .lv-banner__rating { justify-content: center; }
+  .lv-banner__stars { color: #f5b301; letter-spacing: 2px; }
+  .lv-banner__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin: 0 0 14px;
+    opacity: 0.85;
+  }
+  .lv-banner__heading {
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    line-height: 1.04;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    font-weight: 800;
+    margin: 0 0 20px;
+  }
+  .lv-banner__body {
+    font-size: clamp(1rem, 1.4vw, 1.18rem);
+    line-height: 1.65;
+    opacity: 0.95;
+  }
+  .lv-banner__body p { margin: 0 0 1em; }
+  .lv-banner__body p:last-child { margin-bottom: 0; }
+  .lv-banner__subheading {
+    margin: 20px 0 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  .lv-banner__btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 17px 42px;
+    background: var(--lv-btn-bg);
+    color: var(--lv-btn-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 2px;
+    transition: transform 0.15s ease, filter 0.15s ease;
+  }
+  .lv-banner__btn:hover { filter: brightness(1.08); transform: translateY(-2px); }
+  @media screen and (max-width: 749px) {
+    .lv-banner {
+      min-height: var(--lv-min-height-mobile);
+      padding-inline: 20px;
+    }
+    .lv-banner__content { max-width: 100%; text-align: center; }
+    .lv-align-left .lv-banner__inner,
+    .lv-align-right .lv-banner__inner { justify-content: center; }
+    .lv-banner__rating { justify-content: center; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "LV Image Banner",
+  "tag": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Background image" },
+    { "type": "text", "id": "fallback_asset", "label": "Fallback asset filename", "info": "Theme asset used if no image is picked (e.g. lv-hero.jpg)" },
+    { "type": "text", "id": "rating_text", "label": "Rating text (optional)" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow (optional)" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "richtext", "id": "body", "label": "Body" },
+    { "type": "text", "id": "subheading", "label": "Subheading / italic line (optional)" },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#ffffff" },
+    { "type": "color", "id": "overlay_color", "label": "Overlay", "default": "#0c1410" },
+    { "type": "range", "id": "overlay_opacity", "label": "Overlay opacity", "min": 0, "max": 90, "step": 5, "unit": "%", "default": 40 },
+    { "type": "color", "id": "button_bg", "label": "Button background", "default": "#1c3326" },
+    { "type": "color", "id": "button_text_color", "label": "Button text", "default": "#ffffff" },
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "min_height", "label": "Min height (desktop)", "min": 300, "max": 900, "step": 20, "unit": "px", "default": 640 },
+    { "type": "range", "id": "min_height_mobile", "label": "Min height (mobile)", "min": 240, "max": 700, "step": 20, "unit": "px", "default": 480 },
+    { "type": "range", "id": "padding_block", "label": "Vertical padding", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "presets": [
+    { "name": "LV Image Banner" }
+  ]
+}
+{% endschema %}

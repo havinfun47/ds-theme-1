@@ -1,0 +1,148 @@
+<div
+  class="lv-section lv-timeline"
+  style="
+    --lv-bg: {{ section.settings.background_color }};
+    --lv-text: {{ section.settings.text_color }};
+    --lv-accent: {{ section.settings.accent_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="lv-container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="lv-timeline__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="lv-timeline__grid">
+      {%- for block in section.blocks -%}
+        <div class="lv-timeline__step" {{ block.shopify_attributes }}>
+          <div class="lv-timeline__marker"></div>
+          {%- if block.settings.label != blank -%}
+            <div class="lv-timeline__label">{{ block.settings.label }}</div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <h3 class="lv-timeline__title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- assign lines = block.settings.bullets | newline_to_br | split: '<br />' -%}
+          <ul class="lv-timeline__list">
+            {%- for line in lines -%}
+              {%- assign clean = line | strip -%}
+              {%- if clean != blank -%}
+                <li>{{ clean }}</li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .lv-timeline__heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    margin: 0 0 56px;
+  }
+  .lv-timeline__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    position: relative;
+  }
+  .lv-timeline__grid::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: color-mix(in srgb, var(--lv-accent) 35%, transparent);
+    z-index: 0;
+  }
+  .lv-timeline__step { position: relative; z-index: 1; }
+  .lv-timeline__marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--lv-accent);
+    margin: 0 auto 20px;
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--lv-accent) 18%, transparent);
+  }
+  .lv-timeline__label {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--lv-accent);
+    margin-bottom: 6px;
+  }
+  .lv-timeline__title {
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 0 0 18px;
+  }
+  .lv-timeline__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+  .lv-timeline__list li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.85;
+  }
+  .lv-timeline__list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--lv-accent);
+    font-weight: 700;
+  }
+  @media screen and (max-width: 749px) {
+    .lv-timeline__grid { grid-template-columns: 1fr; gap: 40px; }
+    .lv-timeline__grid::before { display: none; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "LV Results Timeline",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How Does Lumvelle Work?" },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#f6f4ef" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#1a1d18" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#1c3326" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "label": "Top", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 76 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 76 }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Stage",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Day 7" },
+        { "type": "text", "id": "title", "label": "Title", "default": "The Gut Reset" },
+        { "type": "textarea", "id": "bullets", "label": "Bullets (one per line)", "default": "Point one\nPoint two\nPoint three" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV Results Timeline",
+      "blocks": [
+        { "type": "step", "settings": { "label": "Day 7", "title": "The Gut Reset", "bullets": "Bloating starts feeling less intense.\nDigestion feels lighter and smoother.\nMental fog begins to lift naturally.\nYou feel cleaner from the inside out." } },
+        { "type": "step", "settings": { "label": "Day 30", "title": "The Daily Balance", "bullets": "Energy feels steadier throughout the day.\nGut discomfort becomes less noticeable.\nYour body feels lighter after meals.\nDaily cleansing becomes part of your routine." } },
+        { "type": "step", "settings": { "label": "Day 90", "title": "Full-Body Vitality", "bullets": "Supports long-term digestive balance.\nHelps maintain a cleaner gut environment.\nUsers report feeling more energized and focused.\nPromotes a renewed sense of clarity and well-being." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

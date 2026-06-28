@@ -1,0 +1,118 @@
+<div
+  class="lv-section lv-faq"
+  style="
+    --lv-bg: {{ section.settings.background_color }};
+    --lv-text: {{ section.settings.text_color }};
+    --lv-accent: {{ section.settings.accent_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="lv-container lv-faq__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="lv-faq__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="lv-faq__list">
+      {%- for block in section.blocks -%}
+        <details class="lv-faq__item"{% if forloop.first and section.settings.open_first %} open{% endif %} {{ block.shopify_attributes }}>
+          <summary class="lv-faq__q">
+            <span>{{ block.settings.question }}</span>
+            <span class="lv-faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="lv-faq__a">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .lv-faq__inner { max-width: 820px; }
+  .lv-faq__heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    margin: 0 0 40px;
+  }
+  .lv-faq__item {
+    border-bottom: 1px solid color-mix(in srgb, var(--lv-text) 14%, transparent);
+  }
+  .lv-faq__q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    list-style: none;
+    padding: 22px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 1rem;
+  }
+  .lv-faq__q::-webkit-details-marker { display: none; }
+  .lv-faq__icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+  }
+  .lv-faq__icon::before,
+  .lv-faq__icon::after {
+    content: "";
+    position: absolute;
+    background: var(--lv-accent);
+    transition: transform 0.2s ease;
+  }
+  .lv-faq__icon::before { top: 8px; left: 0; width: 18px; height: 2px; }
+  .lv-faq__icon::after { left: 8px; top: 0; width: 2px; height: 18px; }
+  .lv-faq__item[open] .lv-faq__icon::after { transform: scaleY(0); }
+  .lv-faq__a {
+    padding: 0 0 24px;
+    line-height: 1.65;
+    opacity: 0.82;
+    font-size: 0.98rem;
+  }
+  .lv-faq__a p { margin: 0 0 1em; }
+  .lv-faq__a p:last-child { margin-bottom: 0; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "LV FAQ",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently Asked Questions" },
+    { "type": "checkbox", "id": "open_first", "label": "Open first item by default", "default": false },
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#1a1d18" },
+    { "type": "color", "id": "accent_color", "label": "Accent", "default": "#1c3326" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "label": "Top", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 76 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom", "min": 0, "max": 140, "step": 4, "unit": "px", "default": 76 }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>Answer.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV FAQ",
+      "blocks": [
+        { "type": "qa", "settings": { "question": "How long until I notice a difference?", "answer": "<p>Many customers report feeling lighter, less bloated, and more energized within the first few days. For deeper digestive balance and ongoing cleansing support, consistent daily use is recommended.</p>" } },
+        { "type": "qa", "settings": { "question": "How do Lumvelle wormwood drops work?", "answer": "<p>Lumvelle delivers a concentrated blend of wild-harvested wormwood, black walnut hull, and oregano oil directly into your digestive system to help support natural cleansing, gut balance, and digestive comfort.</p>" } },
+        { "type": "qa", "settings": { "question": "Will these drops cause harsh side effects?", "answer": "<p>Lumvelle is formulated to support gentle daily cleansing without harsh synthetic ingredients or heavy capsules. As with any herbal product, individual experiences may vary.</p>" } },
+        { "type": "qa", "settings": { "question": "Do I need to take capsules or pills too?", "answer": "<p>No, Lumvelle is designed as a convenient liquid drop formula that absorbs quickly without the need for large capsules, fillers, or complicated cleanse routines.</p>" } },
+        { "type": "qa", "settings": { "question": "What makes Lumvelle different from other cleanses?", "answer": "<p>Unlike harsh cleanse products that overload your system, Lumvelle uses wild-harvested herbal ingredients in an easy-to-use liquid format that targets digestive balance without unnecessary fillers or stimulants.</p>" } },
+        { "type": "qa", "settings": { "question": "Who are Lumvelle wormwood drops for?", "answer": "<p>Lumvelle is made for adults looking to support digestive balance, reduce bloating, and maintain daily energy and gut wellness with a natural herbal cleanse routine.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

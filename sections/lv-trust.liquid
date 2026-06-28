@@ -1,0 +1,84 @@
+<div
+  class="lv-section lv-trust"
+  style="
+    --lv-bg: {{ section.settings.background_color }};
+    --lv-text: {{ section.settings.text_color }};
+    --lv-accent: {{ section.settings.accent_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="lv-container lv-trust__grid">
+    {%- for block in section.blocks -%}
+      <div class="lv-trust__item" {{ block.shopify_attributes }}>
+        <div class="lv-trust__icon">{{ block.settings.icon }}</div>
+        <div class="lv-trust__title">{{ block.settings.title }}</div>
+        <div class="lv-trust__text">{{ block.settings.text }}</div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .lv-section { background: var(--lv-bg); color: var(--lv-text); }
+  .lv-container { max-width: 1200px; margin: 0 auto; padding-inline: 24px; }
+  .lv-trust__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .lv-trust__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .lv-trust__icon { font-size: 2.2rem; color: var(--lv-accent); line-height: 1; }
+  .lv-trust__title {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.95rem;
+  }
+  .lv-trust__text { font-size: 0.88rem; opacity: 0.7; }
+  @media screen and (max-width: 749px) {
+    .lv-trust__grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "LV Trust Row",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "background_color", "label": "Background", "default": "#f6f4ef" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#1a1d18" },
+    { "type": "color", "id": "accent_color", "label": "Icon color", "default": "#1c3326" },
+    { "type": "header", "content": "Padding" },
+    { "type": "range", "id": "padding_top", "label": "Top", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 44 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 44 }
+  ],
+  "blocks": [
+    {
+      "type": "cert",
+      "name": "Certification",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Icon (emoji)", "default": "✅" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Certification" },
+        { "type": "text", "id": "text", "label": "Subtitle", "default": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LV Trust Row",
+      "blocks": [
+        { "type": "cert", "settings": { "icon": "⚗️", "title": "USP-Grade Purity", "text": "Pharmaceutical Quality" } },
+        { "type": "cert", "settings": { "icon": "🔬", "title": "3rd Party Lab Tested", "text": "Verified Potency and Safety" } },
+        { "type": "cert", "settings": { "icon": "🏭", "title": "GMP Verified", "text": "Good Manufacturing Practice" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
