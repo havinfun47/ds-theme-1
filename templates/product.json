@@ -9,345 +9,153 @@
  */{
   "sections": {
     "main": {
-      "type": "product-information",
+      "type": "gc-product-hero",
       "blocks": {
-        "disclosures_g9mWze": {
-          "type": "disclosures",
-          "name": "t:names.disclosures",
+        "tb1": {
+          "type": "trust",
           "settings": {
-            "heading": "Disclosures",
-            "heading_preset": "h5",
-            "open_by_default": false,
-            "icon": "caret",
-            "disclosure_heading_preset": "h6",
-            "text_color": "",
-            "dividers": true,
-            "divider_color": "{{ settings.color_palette.color2 }}",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "icon": "🚚",
+            "label": "Fast Free Shipping"
+          }
         },
-        "media-gallery": {
-          "type": "_product-media-gallery",
-          "static": true,
+        "tb2": {
+          "type": "trust",
           "settings": {
-            "media_presentation": "grid",
-            "media_columns": "two",
-            "image_gap": 4,
-            "large_first_image": false,
-            "icons_style": "none",
-            "slideshow_controls_style": "counter",
-            "slideshow_mobile_controls_style": "dots",
-            "thumbnail_position": "right",
-            "thumbnail_width": 44,
-            "thumbnail_radius": 0,
-            "aspect_ratio": "adapt",
-            "constrain_to_viewport": true,
-            "media_fit": "contain",
-            "media_radius": 0,
-            "extend_media": false,
-            "zoom": true,
-            "video_loop": false,
-            "hide_variants": true,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "icon": "🔒",
+            "label": "Secure Checkout"
+          }
         },
-        "product-details": {
-          "type": "_product-details",
-          "static": true,
+        "tb3": {
+          "type": "trust",
           "settings": {
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "details_position": "flex-start",
-            "gap": 28,
-            "sticky_details_desktop": true,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 24,
-            "padding-block-end": 24,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "group_icgrde": {
-              "type": "group",
-              "name": "Header",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "background_media": "none",
-                "background_color": "",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0,
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "text_xrnftG": {
-                  "type": "text",
-                  "name": "Product title",
-                  "settings": {
-                    "text": "<h1>{{ closest.product.title }}</h1>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h3",
-                    "font": "var(--font-primary--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "price_tVjtKg": {
-                  "type": "price",
-                  "settings": {
-                    "show_sale_price_first": true,
-                    "show_installments": false,
-                    "show_tax_info": false,
-                    "type_preset": "paragraph",
-                    "width": "100%",
-                    "alignment": "left",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "text_color": "",
-                    "padding-block-start": 4,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_xrnftG",
-                "price_tVjtKg"
-              ]
-            },
-            "divider_VJhene": {
-              "type": "_divider",
-              "name": "t:names.divider",
-              "settings": {
-                "thickness": 1,
-                "corner_radius": "square",
-                "divider_color": "{{ settings.color_palette.color2 }}",
-                "width_percent": 100,
-                "padding-block-start": 0,
-                "padding-block-end": 0
-              },
-              "blocks": {}
-            },
-            "variant_picker_R3rGDr": {
-              "type": "variant-picker",
-              "settings": {
-                "variant_style": "buttons",
-                "show_swatches": false,
-                "option_label_text_color": "",
-                "variant_style_class": "default",
-                "custom_variant_background": "{{ settings.color_palette.background }}",
-                "custom_variant_text": "{{ settings.color_palette.foreground }}",
-                "custom_variant_border": "{{ settings.color_palette.foreground }}",
-                "selected_variant_style_class": "default",
-                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
-                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
-                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
-                "alignment": "left",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "buy_buttons_eYQEYi": {
-              "type": "buy-buttons",
-              "settings": {
-                "stacking": true,
-                "text_color": "",
-                "show_pickup_availability": false,
-                "gift_card_form": true,
-                "recipient_button_style": "default",
-                "recipient_button_background": "{{ settings.color_palette.background }}",
-                "recipient_button_text": "{{ settings.color_palette.foreground }}",
-                "recipient_button_border": "{{ settings.color_palette.foreground }}",
-                "selected_recipient_button_style": "default",
-                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
-                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
-                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
-                "input_style": "default",
-                "input_background_color": "{{ settings.color_palette.background }}",
-                "input_text_color": "{{ settings.color_palette.foreground }}",
-                "input_border_color": "{{ settings.color_palette.foreground }}",
-                "border_width": 1,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "quantity": {
-                  "type": "quantity",
-                  "static": true,
-                  "settings": {
-                    "input_style": "default",
-                    "input_background_color": "{{ settings.color_palette.background }}",
-                    "input_text_color": "{{ settings.color_palette.foreground }}",
-                    "input_border_color": "{{ settings.color_palette.foreground }}",
-                    "border_width": 1,
-                    "border_radius": 0
-                  },
-                  "blocks": {}
-                },
-                "add-to-cart": {
-                  "type": "add-to-cart",
-                  "static": true,
-                  "settings": {
-                    "style_class": "button",
-                    "custom_button_background": "{{ settings.color_palette.foreground }}",
-                    "custom_button_text": "{{ settings.color_palette.background }}",
-                    "custom_button_border": "{{ settings.color_palette.background }}"
-                  },
-                  "blocks": {}
-                },
-                "accelerated-checkout": {
-                  "type": "accelerated-checkout",
-                  "static": true,
-                  "settings": {},
-                  "blocks": {}
-                }
-              },
-              "block_order": []
-            },
-            "text_aEtTtq": {
-              "type": "text",
-              "name": "Product description",
-              "settings": {
-                "text": "{{ closest.product.description }}",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-primary--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "group_icgrde",
-            "divider_VJhene",
-            "variant_picker_R3rGDr",
-            "buy_buttons_eYQEYi",
-            "text_aEtTtq"
-          ]
+            "icon": "🌱",
+            "label": "Non-GMO & Vegan"
+          }
+        },
+        "tb4": {
+          "type": "trust",
+          "settings": {
+            "icon": "↩️",
+            "label": "30-Day Returns"
+          }
         }
       },
       "block_order": [
-        "disclosures_g9mWze"
+        "tb1",
+        "tb2",
+        "tb3",
+        "tb4"
       ],
-      "settings": {
-        "content_width": "content-center-aligned",
-        "desktop_media_position": "left",
-        "equal_columns": false,
-        "limit_details_width": false,
-        "gap": 48,
-        "enable_sticky_add_to_cart": true,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
+      "settings": {}
     },
     "gc_trust": {
       "type": "gc-trust-bar",
       "blocks": {
-        "t1": { "type": "badge", "settings": { "icon": "🌱", "label": "Non-GMO" } },
-        "t2": { "type": "badge", "settings": { "icon": "🌿", "label": "Vegan" } },
-        "t3": { "type": "badge", "settings": { "icon": "🌾", "label": "Gluten-Free" } },
-        "t4": { "type": "badge", "settings": { "icon": "🇺🇸", "label": "Made in the USA" } },
-        "t5": { "type": "badge", "settings": { "icon": "🔒", "label": "Secure Checkout" } }
+        "t1": {
+          "type": "badge",
+          "settings": {
+            "icon": "🌱",
+            "label": "Non-GMO"
+          }
+        },
+        "t2": {
+          "type": "badge",
+          "settings": {
+            "icon": "🌿",
+            "label": "Vegan"
+          }
+        },
+        "t3": {
+          "type": "badge",
+          "settings": {
+            "icon": "🌾",
+            "label": "Gluten-Free"
+          }
+        },
+        "t4": {
+          "type": "badge",
+          "settings": {
+            "icon": "🇺🇸",
+            "label": "Made in the USA"
+          }
+        },
+        "t5": {
+          "type": "badge",
+          "settings": {
+            "icon": "🔒",
+            "label": "Secure Checkout"
+          }
+        }
       },
-      "block_order": ["t1", "t2", "t3", "t4", "t5"],
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ],
       "settings": {}
     },
     "gc_benefits": {
       "type": "gc-benefits",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "icon": "🪱", "title": "Targets Every Stage", "text": "Works against adult parasites, larvae, and eggs in a single protocol." } },
-        "b2": { "type": "benefit", "settings": { "icon": "🫧", "title": "Reduces Bloating & Gas", "text": "Helps calm digestion and ease uncomfortable bloating and gas." } },
-        "b3": { "type": "benefit", "settings": { "icon": "⚡", "title": "Restores Energy", "text": "Fights the fatigue and brain fog linked to gut imbalance." } },
-        "b4": { "type": "benefit", "settings": { "icon": "🛡️", "title": "Rebuilds Gut Lining", "text": "Step 2 fulvic minerals support repair and nutrient absorption." } },
-        "b5": { "type": "benefit", "settings": { "icon": "🌱", "title": "Gentle & Natural", "text": "Herbal blend without the harsh side effects of synthetic dewormers." } },
-        "b6": { "type": "benefit", "settings": { "icon": "💧", "title": "Faster Absorption", "text": "Sublingual liquid delivery absorbs faster than capsules." } }
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🪱",
+            "title": "Targets Every Stage",
+            "text": "Works against adult parasites, larvae, and eggs in a single protocol."
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🫧",
+            "title": "Reduces Bloating & Gas",
+            "text": "Helps calm digestion and ease uncomfortable bloating and gas."
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "⚡",
+            "title": "Restores Energy",
+            "text": "Fights the fatigue and brain fog linked to gut imbalance."
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🛡️",
+            "title": "Rebuilds Gut Lining",
+            "text": "Step 2 fulvic minerals support repair and nutrient absorption."
+          }
+        },
+        "b5": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌱",
+            "title": "Gentle & Natural",
+            "text": "Herbal blend without the harsh side effects of synthetic dewormers."
+          }
+        },
+        "b6": {
+          "type": "benefit",
+          "settings": {
+            "icon": "💧",
+            "title": "Faster Absorption",
+            "text": "Sublingual liquid delivery absorbs faster than capsules."
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4", "b5", "b6"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
       "settings": {}
     },
     "gc_why": {
@@ -359,66 +167,278 @@
     "gc_benefits_list": {
       "type": "gc-benefits-list",
       "blocks": {
-        "i1": { "type": "item", "settings": { "text": "Targets parasites, larvae, and eggs at the same time" } },
-        "i2": { "type": "item", "settings": { "text": "Helps reduce bloating, gas, and digestive discomfort" } },
-        "i3": { "type": "item", "settings": { "text": "Supports healthy, regular bowel movements" } },
-        "i4": { "type": "item", "settings": { "text": "Fights fatigue and restores daily energy" } },
-        "i5": { "type": "item", "settings": { "text": "Clears brain fog and supports mental clarity" } },
-        "i6": { "type": "item", "settings": { "text": "Curbs sugar and carb cravings" } },
-        "i7": { "type": "item", "settings": { "text": "Promotes clearer, healthier-looking skin" } },
-        "i8": { "type": "item", "settings": { "text": "Supports better, more restful sleep" } },
-        "i9": { "type": "item", "settings": { "text": "Replenishes nutrients with fulvic acid trace minerals" } },
-        "i10": { "type": "item", "settings": { "text": "Helps repair and strengthen the gut lining" } },
-        "i11": { "type": "item", "settings": { "text": "Improves nutrient absorption after the cleanse" } },
-        "i12": { "type": "item", "settings": { "text": "Sublingual delivery for faster absorption than capsules" } },
-        "i13": { "type": "item", "settings": { "text": "Clean, non-GMO herbs — no fillers or synthetics" } }
+        "i1": {
+          "type": "item",
+          "settings": {
+            "text": "Targets parasites, larvae, and eggs at the same time"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "text": "Helps reduce bloating, gas, and digestive discomfort"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "text": "Supports healthy, regular bowel movements"
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "text": "Fights fatigue and restores daily energy"
+          }
+        },
+        "i5": {
+          "type": "item",
+          "settings": {
+            "text": "Clears brain fog and supports mental clarity"
+          }
+        },
+        "i6": {
+          "type": "item",
+          "settings": {
+            "text": "Curbs sugar and carb cravings"
+          }
+        },
+        "i7": {
+          "type": "item",
+          "settings": {
+            "text": "Promotes clearer, healthier-looking skin"
+          }
+        },
+        "i8": {
+          "type": "item",
+          "settings": {
+            "text": "Supports better, more restful sleep"
+          }
+        },
+        "i9": {
+          "type": "item",
+          "settings": {
+            "text": "Replenishes nutrients with fulvic acid trace minerals"
+          }
+        },
+        "i10": {
+          "type": "item",
+          "settings": {
+            "text": "Helps repair and strengthen the gut lining"
+          }
+        },
+        "i11": {
+          "type": "item",
+          "settings": {
+            "text": "Improves nutrient absorption after the cleanse"
+          }
+        },
+        "i12": {
+          "type": "item",
+          "settings": {
+            "text": "Sublingual delivery for faster absorption than capsules"
+          }
+        },
+        "i13": {
+          "type": "item",
+          "settings": {
+            "text": "Clean, non-GMO herbs — no fillers or synthetics"
+          }
+        }
       },
-      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10", "i11", "i12", "i13"],
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8",
+        "i9",
+        "i10",
+        "i11",
+        "i12",
+        "i13"
+      ],
       "settings": {}
     },
     "gc_how": {
       "type": "gc-how-to-use",
       "blocks": {
-        "s1": { "type": "step", "settings": { "title": "Cleanse (Days 1–14)", "text": "Place the recommended dropper amount of the Step 1 herbal blend under your tongue twice daily. Hold for 30 seconds before swallowing to target parasites at every stage of their lifecycle." } },
-        "s2": { "type": "step", "settings": { "title": "Restore (Daily)", "text": "Add the Step 2 fulvic acid trace minerals to a glass of water and drink once daily to flush toxins, replenish nutrients, and support gut-lining repair." } },
-        "s3": { "type": "step", "settings": { "title": "Repeat the Cycle", "text": "Complete the full 14-day cycle 2–3 times for a thorough reset, then use as needed for ongoing maintenance." } }
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Cleanse (Days 1–14)",
+            "text": "Place the recommended dropper amount of the Step 1 herbal blend under your tongue twice daily. Hold for 30 seconds before swallowing to target parasites at every stage of their lifecycle."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Restore (Daily)",
+            "text": "Add the Step 2 fulvic acid trace minerals to a glass of water and drink once daily to flush toxins, replenish nutrients, and support gut-lining repair."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Repeat the Cycle",
+            "text": "Complete the full 14-day cycle 2–3 times for a thorough reset, then use as needed for ongoing maintenance."
+          }
+        }
       },
-      "block_order": ["s1", "s2", "s3"],
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {}
     },
     "gc_stats": {
       "type": "gc-stats",
       "blocks": {
-        "st1": { "type": "stat", "settings": { "value": "87%", "label": "reported less bloating" } },
-        "st2": { "type": "stat", "settings": { "value": "82%", "label": "felt more daily energy" } },
-        "st3": { "type": "stat", "settings": { "value": "91%", "label": "would recommend to a friend" } },
-        "st4": { "type": "stat", "settings": { "value": "88%", "label": "noticed improved digestion" } }
+        "st1": {
+          "type": "stat",
+          "settings": {
+            "value": "87%",
+            "label": "reported less bloating"
+          }
+        },
+        "st2": {
+          "type": "stat",
+          "settings": {
+            "value": "82%",
+            "label": "felt more daily energy"
+          }
+        },
+        "st3": {
+          "type": "stat",
+          "settings": {
+            "value": "91%",
+            "label": "would recommend to a friend"
+          }
+        },
+        "st4": {
+          "type": "stat",
+          "settings": {
+            "value": "88%",
+            "label": "noticed improved digestion"
+          }
+        }
       },
-      "block_order": ["st1", "st2", "st3", "st4"],
+      "block_order": [
+        "st1",
+        "st2",
+        "st3",
+        "st4"
+      ],
       "settings": {}
     },
     "gc_testimonials": {
       "type": "gc-testimonials",
       "blocks": {
-        "r1": { "type": "review", "settings": { "body": "After two weeks the bloating I'd lived with for years finally went down. I have so much more energy and I'm not crashing every afternoon anymore.", "name": "Sarah M.", "meta": "Age 41" } },
-        "r2": { "type": "review", "settings": { "body": "I was skeptical, but by the second cycle the brain fog lifted and my digestion is the best it's been in a decade. The Step 2 minerals make a real difference.", "name": "James T.", "meta": "Age 53" } },
-        "r3": { "type": "review", "settings": { "body": "Gentle and easy to use — no harsh cramping like other cleanses I've tried. My skin even cleared up around week three.", "name": "Megan R.", "meta": "Age 34" } },
-        "r4": { "type": "review", "settings": { "body": "My sugar cravings basically disappeared. I'm sleeping through the night and waking up actually rested. Wish I'd found this sooner.", "name": "David K.", "meta": "Age 47" } },
-        "r5": { "type": "review", "settings": { "body": "Did the full 3 cycles. The difference in how I feel day to day is night and day. Less bloat, more energy, clearer head.", "name": "Linda P.", "meta": "Age 58" } },
-        "r6": { "type": "review", "settings": { "body": "The sublingual drops are so much easier than swallowing handfuls of capsules. Noticed changes within the first week.", "name": "Anthony G.", "meta": "Age 39" } }
+        "r1": {
+          "type": "review",
+          "settings": {
+            "body": "After two weeks the bloating I'd lived with for years finally went down. I have so much more energy and I'm not crashing every afternoon anymore.",
+            "name": "Sarah M.",
+            "meta": "Age 41"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "body": "I was skeptical, but by the second cycle the brain fog lifted and my digestion is the best it's been in a decade. The Step 2 minerals make a real difference.",
+            "name": "James T.",
+            "meta": "Age 53"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "body": "Gentle and easy to use — no harsh cramping like other cleanses I've tried. My skin even cleared up around week three.",
+            "name": "Megan R.",
+            "meta": "Age 34"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "body": "My sugar cravings basically disappeared. I'm sleeping through the night and waking up actually rested. Wish I'd found this sooner.",
+            "name": "David K.",
+            "meta": "Age 47"
+          }
+        },
+        "r5": {
+          "type": "review",
+          "settings": {
+            "body": "Did the full 3 cycles. The difference in how I feel day to day is night and day. Less bloat, more energy, clearer head.",
+            "name": "Linda P.",
+            "meta": "Age 58"
+          }
+        },
+        "r6": {
+          "type": "review",
+          "settings": {
+            "body": "The sublingual drops are so much easier than swallowing handfuls of capsules. Noticed changes within the first week.",
+            "name": "Anthony G.",
+            "meta": "Age 39"
+          }
+        }
       },
-      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6"],
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5",
+        "r6"
+      ],
       "settings": {}
     },
     "gc_usp": {
       "type": "gc-usp",
       "blocks": {
-        "u1": { "type": "usp", "settings": { "icon": "🔄", "title": "Full-Lifecycle Coverage", "text": "Most cleanses only kill adult parasites. GutCleanse targets adults, larvae, and eggs so the cycle doesn't restart." } },
-        "u2": { "type": "usp", "settings": { "icon": "🌿", "title": "Multi-Mechanism Herbal Blend", "text": "Wormwood, clove, neem, pumpkin seed, fennel, sunflower, and vitamin E work through several pathways at once." } },
-        "u3": { "type": "usp", "settings": { "icon": "🛠️", "title": "Two-Step Recovery System", "text": "Competitors skip the rebuild. Step 2 replenishes nutrients and supports gut-lining repair after the cleanse." } },
-        "u4": { "type": "usp", "settings": { "icon": "🧪", "title": "Clean, Honest Formulation", "text": "No fillers, no synthetics. Non-GMO, vegan, and gluten-free — made to high quality standards." } }
+        "u1": {
+          "type": "usp",
+          "settings": {
+            "icon": "🔄",
+            "title": "Full-Lifecycle Coverage",
+            "text": "Most cleanses only kill adult parasites. GutCleanse targets adults, larvae, and eggs so the cycle doesn't restart."
+          }
+        },
+        "u2": {
+          "type": "usp",
+          "settings": {
+            "icon": "🌿",
+            "title": "Multi-Mechanism Herbal Blend",
+            "text": "Wormwood, clove, neem, pumpkin seed, fennel, sunflower, and vitamin E work through several pathways at once."
+          }
+        },
+        "u3": {
+          "type": "usp",
+          "settings": {
+            "icon": "🛠️",
+            "title": "Two-Step Recovery System",
+            "text": "Competitors skip the rebuild. Step 2 replenishes nutrients and supports gut-lining repair after the cleanse."
+          }
+        },
+        "u4": {
+          "type": "usp",
+          "settings": {
+            "icon": "🧪",
+            "title": "Clean, Honest Formulation",
+            "text": "No fillers, no synthetics. Non-GMO, vegan, and gluten-free — made to high quality standards."
+          }
+        }
       },
-      "block_order": ["u1", "u2", "u3", "u4"],
+      "block_order": [
+        "u1",
+        "u2",
+        "u3",
+        "u4"
+      ],
       "settings": {}
     },
     "gc_guarantee": {
